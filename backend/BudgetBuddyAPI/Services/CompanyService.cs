@@ -42,39 +42,23 @@ namespace BudgetBuddyAPI.Services
                 response?.Count() ?? 0,
                 totalItems,
                 rowsPerPage ?? 0,
-                name,
-                trading,
                 response
             );
         }
 
-        public CompanyResponse GetCompanyByDocument(string document)
+        public Company? GetCompanyByDocument(string document)
         {
             var parameters = new DynamicParameters();
             parameters.Add("@Document", document);
 
-            var company = database.BudgetBuddyConnection.QueryFirstOrDefault<Company>(
+            return database.BudgetBuddyConnection.QueryFirstOrDefault<Company>(
                 "GetCompanyByDocument",
                 parameters,
                 commandType: CommandType.StoredProcedure
             );
-
-            int remainingPages = 0;
-            int totalItems = company != null ? 1 : 0;
-
-            return new CompanyResponse(
-                remainingPages,
-                1,
-                totalItems,
-                totalItems,
-                1,
-                company?.Name,
-                company?.Trading,
-                new List<Company> { company }
-            );
         }
 
-        public CompanyResponse CreateCompany(int id, string name, string trading, string document)
+        public Company? CreateCompany(int id, string name, string trading, string document)
         {
             var parameters = new DynamicParameters();
             parameters.Add("@IdCompany", id);
@@ -91,20 +75,16 @@ namespace BudgetBuddyAPI.Services
             return GetCompanyByDocument(document);
         }
 
-        public CompanyResponse UpdateCompany(string document, string name, string trading)
+        public void DeleteCompanyByDocument(string document)
         {
             var parameters = new DynamicParameters();
             parameters.Add("@Document", document);
-            parameters.Add("@Name", name);
-            parameters.Add("@Trading", trading);
 
-            var result = database.BudgetBuddyConnection.Execute(
-                "UpdateCompany",
+            database.BudgetBuddyConnection.Query(
+                "DeleteCompanyByDocument",
                 parameters,
                 commandType: CommandType.StoredProcedure
             );
-
-            return GetCompanyByDocument(document);
         }
     }
 }

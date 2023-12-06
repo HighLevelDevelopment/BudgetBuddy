@@ -12,6 +12,7 @@ namespace BudgetBuddyAPI.Controllers
             MapListAllCompany(app);
             MapGetCompanyByDocument(app);
             MapCreateCompany(app);
+            MapDeleteCompany(app);
         }
 
         private static void MapListAllCompany(WebApplication app)
@@ -87,6 +88,31 @@ namespace BudgetBuddyAPI.Controllers
             .WithName("Create Company")
             .WithTags("Company")
             .Produces<CompanyResponse>()
+            .Produces<ProblemDetails>(500);
+        }
+
+        private static void MapDeleteCompany(WebApplication app)
+        {
+            app.MapDelete("/Company/{document}", (
+                [FromBody] CompanyRequest companyRequest
+            ) =>
+            {
+                try
+                {
+                    using (var scoped = app.Services.CreateScope())
+                    {
+                        var service = scoped.ServiceProvider.GetService<CompanyService>();
+                        service!.DeleteCompanyByDocument(companyRequest.Document);
+                        return Results.Ok();
+                    }
+                }
+                catch (Exception e)
+                {
+                    return Results.Problem(e.Message);
+                }
+            })
+            .WithName("Delete Company")
+            .WithTags("Company")
             .Produces<ProblemDetails>(500);
         }
     }
