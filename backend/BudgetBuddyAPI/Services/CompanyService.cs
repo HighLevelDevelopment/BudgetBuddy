@@ -74,9 +74,10 @@ namespace BudgetBuddyAPI.Services
             );
         }
 
-        public CompanyResponse CreateCompany(string name, string trading, string document)
+        public CompanyResponse CreateCompany(int id, string name, string trading, string document)
         {
             var parameters = new DynamicParameters();
+            parameters.Add("@IdCompany", id);
             parameters.Add("@Name", name);
             parameters.Add("@Trading", trading);
             parameters.Add("@Document", document);

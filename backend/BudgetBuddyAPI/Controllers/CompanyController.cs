@@ -12,7 +12,6 @@ namespace BudgetBuddyAPI.Controllers
             MapListAllCompany(app);
             MapGetCompanyByDocument(app);
             MapCreateCompany(app);
-            MapUpdateCompany(app);
         }
 
         private static void MapListAllCompany(WebApplication app)
@@ -77,7 +76,7 @@ namespace BudgetBuddyAPI.Controllers
                     using (var scoped = app.Services.CreateScope())
                     {
                         var service = scoped.ServiceProvider.GetService<CompanyService>();
-                        return Results.Ok(service!.CreateCompany(companyRequest.Name, companyRequest.Trading, companyRequest.Document));
+                        return Results.Ok(service!.CreateCompany(companyRequest.Id, companyRequest.Name, companyRequest.Trading, companyRequest.Document));
                     }
                 }
                 catch (Exception e)
@@ -86,32 +85,6 @@ namespace BudgetBuddyAPI.Controllers
                 }
             })
             .WithName("Create Company")
-            .WithTags("Company")
-            .Produces<CompanyResponse>()
-            .Produces<ProblemDetails>(500);
-        }
-
-        private static void MapUpdateCompany(WebApplication app)
-        {
-            app.MapPut("/Company/{document}", (
-                [FromRoute] string document,
-                [FromBody] CompanyRequest companyRequest
-            ) =>
-            {
-                try
-                {
-                    using (var scoped = app.Services.CreateScope())
-                    {
-                        var service = scoped.ServiceProvider.GetService<CompanyService>();
-                        return Results.Ok(service!.UpdateCompany(document, companyRequest.Name, companyRequest.Trading));
-                    }
-                }
-                catch (Exception e)
-                {
-                    return Results.Problem(e.Message);
-                }
-            })
-            .WithName("Update Company")
             .WithTags("Company")
             .Produces<CompanyResponse>()
             .Produces<ProblemDetails>(500);
