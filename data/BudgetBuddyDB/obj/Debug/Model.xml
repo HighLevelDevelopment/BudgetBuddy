@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="150" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="BudgetBuddyDB.dll" />
+			<Metadata Name="FileName" Value="D:\DEVS\BUDGETBUDDY\DATA\BUDGETBUDDYDB\OBJ\DEBUG\BUDGETBUDDYDB.DLL" />
+			<Metadata Name="AssemblyName" Value="BudgetBuddyDB" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="D:\Devs\BudgetBuddy\data\BudgetBuddyDB\obj\Debug\BudgetBuddyDB.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Company]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Company].[IdCompany]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Company].[Name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Company].[Trading]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Company].[Document]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="15" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Company].[RegisterDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Company].[Active]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlTableType" Name="[dbo].[CompanyType]">
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlTableTypeSimpleColumn" Name="[dbo].[CompanyType].[Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlTableTypeSimpleColumn" Name="[dbo].[CompanyType].[Trading]">
+						<Property Name="IsNullable" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlTableTypeSimpleColumn" Name="[dbo].[CompanyType].[CNPJ]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="15" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[DeleteCompanyByDocument]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	UPDATE Company SET Active = 0
+	WHERE Document = @Document
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Company]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[Active]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[Document]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DeleteCompanyByDocument].[@Document]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[DeleteCompanyByDocument].[@Document]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="127" />
+				<Property Name="Length" Value="270" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="-- =============================================&#xD;&#xA;-- Author:&#x9;&#x9;Lucas AUGUSTO&#xD;&#xA;-- =============================================&#xD;&#xA;CREATE PROCEDURE DeleteCompanyByDocument &#xD;&#xA;&#x9;@Document VARCHAR(255)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[ExistsCompanyDocument]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+	SELECT 1 FROM Company WITH(NOLOCK) WHERE Document = @Document
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Company]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[Document]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ExistsCompanyDocument].[@Document]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ExistsCompanyDocument].[@Document]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="15" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="155" />
+				<Property Name="Length" Value="323" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="-- =============================================&#xD;&#xA;-- Author:&#x9;&#x9;Lucas AUGUSTO&#xD;&#xA;-- Create date: 2023-10-10&#xD;&#xA;-- =============================================&#xD;&#xA;CREATE PROCEDURE [dbo].[ExistsCompanyDocument]&#xD;&#xA;&#x9;@Document varchar(15)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetCompanyByDocument]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT * FROM Company WITH(NOLOCK)
+	WHERE Active = 1
+	AND
+	Document = @Document
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Company]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[Active]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[Document]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetCompanyByDocument].[@Document]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetCompanyByDocument].[@Document]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="15" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="155" />
+				<Property Name="Length" Value="325" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="-- =============================================&#xD;&#xA;-- Author:&#x9;&#x9;Lucas AUGUSTO&#xD;&#xA;-- Create date: 2023-10-12&#xD;&#xA;-- =============================================&#xD;&#xA;CREATE PROCEDURE [dbo].[GetCompanyByDocument]&#xD;&#xA;&#x9;@Document VARCHAR(15)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[InsCompany]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	IF (@IdCompany = 0)
+	BEGIN
+		INSERT INTO Company VALUES
+		(
+			@Name
+			, @Trading
+			, @Document
+			, GETDATE()
+			, 1
+		)
+	END	
+	ELSE
+	BEGIN
+		UPDATE Company SET Name = @Name, Trading = @Trading, Document = @Document
+		WHERE IdCompany = @IdCompany
+	END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[InsCompany].[@IdCompany]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InsCompany].[@Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InsCompany].[@Trading]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[InsCompany].[@Document]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[Trading]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[Document]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[IdCompany]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[InsCompany].[@IdCompany]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[InsCompany].[@Name]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[InsCompany].[@Trading]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[InsCompany].[@Document]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="15" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="155" />
+				<Property Name="Length" Value="570" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="-- =============================================&#xD;&#xA;-- Author:&#x9;&#x9;Lucas AUGUSTO&#xD;&#xA;-- Create date: 2023-10-10&#xD;&#xA;-- =============================================&#xD;&#xA;CREATE PROCEDURE [dbo].[InsCompany]&#xD;&#xA;&#x9;@IdCompany int&#xD;&#xA;&#x9;, @Name varchar(255)&#xD;&#xA;&#x9;, @Trading varchar(255)&#xD;&#xA;&#x9;, @Document varchar(15)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[ListAllCompany]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT 
+		*
+	INTO #Company
+	FROM Company WITH(NOLOCK)
+	WHERE Active = 1
+	AND Name = ISNULL(@Name, Name)
+	AND Trading = ISNULL(@Trading, Trading)
+
+	IF @RowsPerPage IS NOT NULL
+	BEGIN
+		DECLARE @TotalRows INT;
+		SELECT @TotalRows = COUNT(*) FROM #Company;
+		SET @RemainingPages = CEILING((@TotalRows - COALESCE(@PageNumber,1) * @RowsPerPage) / CAST(@RowsPerPage AS FLOAT));
+	END
+	ELSE
+	BEGIN
+		SET @RemainingPages = 0
+	END
+
+	SELECT @TotalItems = COUNT(*) FROM #Company;
+
+	SELECT * FROM #Company
+	ORDER BY Document
+	OFFSET (COALESCE(@PageNumber,1) - 1) * COALESCE(@RowsPerPage,0) ROWS
+	FETCH NEXT COALESCE(@RowsPerPage,2147483647) ROWS ONLY;
+	
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[Active]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ListAllCompany].[@Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Company].[Trading]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ListAllCompany].[@Trading]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ListAllCompany].[@RowsPerPage]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ListAllCompany].[#Company]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ListAllCompany].[@RemainingPages]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ListAllCompany].[@PageNumber]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[float]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ListAllCompany].[@TotalItems]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ListAllCompany].[#Company].[Document]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[ListAllCompany].[#Company]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[ListAllCompany].[#Company].[IdCompany]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[Company].[IdCompany]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[ListAllCompany].[#Company].[Name]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[Company].[Name]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[ListAllCompany].[#Company].[Trading]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[Company].[Trading]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[ListAllCompany].[#Company].[Document]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[Company].[Document]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[ListAllCompany].[#Company].[RegisterDate]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[Company].[RegisterDate]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[ListAllCompany].[#Company].[Active]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[Company].[Active]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ListAllCompany].[@PageNumber]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[1]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ListAllCompany].[@RowsPerPage]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[NULL]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ListAllCompany].[@Name]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[NULL]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ListAllCompany].[@Trading]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[NULL]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ListAllCompany].[@RemainingPages]">
+						<Property Name="IsOutput" Value="True" />
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ListAllCompany].[@TotalItems]">
+						<Property Name="IsOutput" Value="True" />
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="155" />
+				<Property Name="Length" Value="1052" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="-- =============================================&#xD;&#xA;-- Author:&#x9;&#x9;Lucas AUGUSTO&#xD;&#xA;-- Create date: 2023-10-12&#xD;&#xA;-- =============================================&#xD;&#xA;CREATE PROCEDURE [dbo].[ListAllCompany]&#xD;&#xA;&#x9;@PageNumber INT = 1,&#xD;&#xA;&#x9;@RowsPerPage INT = NULL,&#xD;&#xA;&#x9;@Name VARCHAR(255) = NULL,&#xD;&#xA;&#x9;@Trading VARCHAR(255) = NULL,&#xD;&#xA;&#x9;@RemainingPages INT = 0 OUTPUT,&#xD;&#xA;&#x9;@TotalItems INT = 0 OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_Company]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Company].[IdCompany]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Company]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="3" />
+		</Element>
+	</Model>
+</DataSchemaModel>

@@ -1,0 +1,10 @@
+D:\Devs\BudgetBuddy\data\BudgetBuddyDB\bin\Debug\BudgetBuddyDB.dacpac
+D:\Devs\BudgetBuddy\data\BudgetBuddyDB\bin\Debug\BudgetBuddyDB.dll
+D:\Devs\BudgetBuddy\data\BudgetBuddyDB\bin\Debug\BudgetBuddyDB.pdb
+D:\Devs\BudgetBuddy\data\BudgetBuddyDB\obj\Debug\BudgetBuddyDB.sqlproj.AssemblyReference.cache
+D:\Devs\BudgetBuddy\data\BudgetBuddyDB\obj\Debug\Model.xml
+D:\Devs\BudgetBuddy\data\BudgetBuddyDB\obj\Debug\refactor.xml
+D:\Devs\BudgetBuddy\data\BudgetBuddyDB\obj\Debug\postdeploy.sql
+D:\Devs\BudgetBuddy\data\BudgetBuddyDB\obj\Debug\predeploy.sql
+D:\Devs\BudgetBuddy\data\BudgetBuddyDB\obj\Debug\BudgetBuddyDB.dll
+D:\Devs\BudgetBuddy\data\BudgetBuddyDB\obj\Debug\BudgetBuddyDB.pdb
