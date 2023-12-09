@@ -1,33 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Devs\\BudgetBuddy\\backend\\BudgetBuddyAPI\\BudgetBuddyAPI.csproj": {}
+    "/Users/pedromoreira/repos/BudgetBuddy/backend/BudgetBuddyAPI/BudgetBuddyAPI.csproj": {}
   },
   "projects": {
-    "D:\\Devs\\BudgetBuddy\\backend\\BudgetBuddyAPI\\BudgetBuddyAPI.csproj": {
+    "/Users/pedromoreira/repos/BudgetBuddy/backend/BudgetBuddyAPI/BudgetBuddyAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Devs\\BudgetBuddy\\backend\\BudgetBuddyAPI\\BudgetBuddyAPI.csproj",
+        "projectUniqueName": "/Users/pedromoreira/repos/BudgetBuddy/backend/BudgetBuddyAPI/BudgetBuddyAPI.csproj",
         "projectName": "BudgetBuddyAPI",
-        "projectPath": "D:\\Devs\\BudgetBuddy\\backend\\BudgetBuddyAPI\\BudgetBuddyAPI.csproj",
-        "packagesPath": "C:\\Users\\PkRed\\.nuget\\packages\\",
-        "outputPath": "D:\\Devs\\BudgetBuddy\\backend\\BudgetBuddyAPI\\obj\\",
+        "projectPath": "/Users/pedromoreira/repos/BudgetBuddy/backend/BudgetBuddyAPI/BudgetBuddyAPI.csproj",
+        "packagesPath": "/Users/pedromoreira/.nuget/packages/",
+        "outputPath": "/Users/pedromoreira/repos/BudgetBuddy/backend/BudgetBuddyAPI/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PkRed\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/pedromoreira/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.pkg.github.com/Hunes-Tecnologia/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -69,6 +62,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.23, 6.0.23]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -77,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }
