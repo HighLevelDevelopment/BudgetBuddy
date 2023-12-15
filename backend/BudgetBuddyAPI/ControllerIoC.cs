@@ -8,5 +8,10 @@ namespace BudgetBuddyAPI
         {
             app.MapCompany();
         }
+
+        public static void ConfigureStatus(this WebApplication app)
+        {
+            app.MapGet("/status", () => "Working!").WithTags("Others").WithName("Status");
+        }
     }
 }

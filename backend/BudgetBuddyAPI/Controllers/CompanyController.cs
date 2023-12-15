@@ -32,6 +32,10 @@ namespace BudgetBuddyAPI.Controllers
                         return Results.Ok(service!.ListAllCompany(name, trading, pageNumber, rowsPerPage));
                     }
                 }
+                catch (ArgumentException e)
+                {
+                    return Results.BadRequest(e.Message);
+                }
                 catch (Exception e)
                 {
                     return Results.Problem(e.Message);
@@ -40,6 +44,7 @@ namespace BudgetBuddyAPI.Controllers
             .WithName("List All Company")
             .WithTags("Company")
             .Produces<CompanyResponse>()
+            .Produces<ProblemDetails>(400)
             .Produces<ProblemDetails>(500);
         }
 
@@ -94,7 +99,7 @@ namespace BudgetBuddyAPI.Controllers
         private static void MapDeleteCompany(WebApplication app)
         {
             app.MapDelete("/Company/{document}", (
-                [FromBody] CompanyRequest companyRequest
+                string document
             ) =>
             {
                 try
@@ -102,7 +107,7 @@ namespace BudgetBuddyAPI.Controllers
                     using (var scoped = app.Services.CreateScope())
                     {
                         var service = scoped.ServiceProvider.GetService<CompanyService>();
-                        service!.DeleteCompanyByDocument(companyRequest.Document);
+                        service!.DeleteCompanyByDocument(document);
                         return Results.Ok();
                     }
                 }
