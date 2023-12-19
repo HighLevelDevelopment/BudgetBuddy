@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\backend",
+    "\\backend\\BudgetBuddyAPI",
+    "\\backend\\BudgetBuddyAPI\\Services"
   ],
+  "SelectedNode": "\\backend\\BudgetBuddyAPI\\Services\\CompanyService.cs",
   "PreviewInSolutionExplorer": false
 }
