@@ -1,6 +1,11 @@
 # BudgetBuddy
 
 ## Using containers
+
+We'll make our ecossystem with containers.
+
+### Building the API
+
 For using docker to up our API, execute the below code to generate the image.
 ```
 docker build -t budgetbuddyapi -f dockerbuilds/webapi backend/BudgetBuddyAPI/
@@ -11,6 +16,14 @@ And start the container with:
 docker run -d -p 8080:80 --name budgetbuddyapi budgetbuddyapi
 ```
 
-docker build -t budgetbuddyweb -f dockerbuilds/webapp frontend/budgetbuddy/
+### Uploading to docker hub
 
-docker run -d -p 80:80 --name budgetbuddyweb budgetbuddyweb
+Create a tag for image with:
+```
+docker tag budgetbuddyapi:latest peedroca/budgetbuddyapi:latest
+```
+
+Sending to registry using:
+```
+docker push peedroca/budgetbuddyapi:latest
+```
