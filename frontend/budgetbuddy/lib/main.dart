@@ -1,8 +1,13 @@
-import 'package:budgetbuddy/company/pages/company_list.dart';
+import 'package:budgetbuddy/common/my_theme.dart';
+import 'package:budgetbuddy/company/pages/widgets/company_list.dart';
 import 'package:budgetbuddy/company/pages/company_page.dart';
+import 'package:budgetbuddy/dashboard/pages/dashboard_page.dart';
+import 'package:budgetbuddy/home.dart';
+import 'package:budgetbuddy/navigation/pages/navigation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:budgetbuddy/company/models/company.dart';
 import 'package:budgetbuddy/company/services/company_service.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,14 +18,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      title: 'Budget Buddy',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const CompanyPage(),
+      initialRoute: '/',
+      theme: MyTheme.lightTheme,
+      routes: {
+        '/': (context) => const NavigationPage(),
+      },
     );
   }
 }

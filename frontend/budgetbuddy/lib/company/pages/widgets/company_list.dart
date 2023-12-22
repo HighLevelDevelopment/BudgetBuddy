@@ -7,6 +7,7 @@ Use my CompanyService
 Use my CompanyCard
 */
 
+import 'package:budgetbuddy/company/pages/widgets/company_card.dart';
 import 'package:flutter/material.dart';
 import 'package:budgetbuddy/company/models/company.dart';
 import 'package:budgetbuddy/company/services/company_service.dart';
@@ -30,39 +31,29 @@ class _CompanyListState extends State<CompanyList> {
       builder: (context, snapshot) {
         if (snapshot.hasData && snapshot.data!.isNotEmpty) {
           final companies = snapshot.data!;
-          return ListView.builder(
+          return GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, // Number of columns
+              crossAxisSpacing: 10, // Horizontal space between cards
+              mainAxisSpacing: 10, // Vertical space between cards
+              childAspectRatio: 3 / 1, // Aspect ratio of the cards
+            ),
             itemCount: companies.length,
             itemBuilder: (context, index) {
               final company = companies[index];
-              return ListTile(
-                title: Text(company.name),
-                subtitle: Text(company.trading),
-                trailing: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      onPressed: () async {
-                        final updatedCompany = await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => CompanyForm(company: company),
-                          ),
-                        );
-                        if (updatedCompany != null) {
-                          setState(() {});
-                        }
-                      },
-                      icon: const Icon(Icons.edit),
-                    ),
-                    IconButton(
-                      onPressed: () async {
-                        await companyService.deleteCompany(company.document).then((value) => setState(() {}));
-                      },
-                      icon: const Icon(Icons.delete),
-                    ),
-                  ],
-                ),
-              );
+              return CompanyCard(company: company, onEdit: () { 
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CompanyForm(company: company),
+                  ),
+                );
+
+                setState(() {});
+               }, onDelete: () {
+                companyService.deleteCompany(company.document);
+                setState(() {});
+               },);
             },
           );
         } else if (snapshot.hasError) {

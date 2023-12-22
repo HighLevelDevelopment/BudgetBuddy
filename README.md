@@ -10,3 +10,7 @@ And start the container with:
 ```
 docker run -d -p 8080:80 --name budgetbuddyapi budgetbuddyapi
 ```
+
+docker build -t budgetbuddyweb -f dockerbuilds/webapp frontend/budgetbuddy/
+
+docker run -d -p 80:80 --name budgetbuddyweb budgetbuddyweb

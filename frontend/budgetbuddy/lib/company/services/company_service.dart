@@ -19,21 +19,22 @@ import 'package:dio/dio.dart';
 import 'package:budgetbuddy/company/models/company.dart';
 
 class CompanyService {
-  final Dio _dio = Dio();
+  final String _baseUrl = 'http://129.148.54.19:8080/Company';
+  final Dio _dio = Dio()..interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
 
   Future<List<Company>> getCompanies() async {
-    final response = await _dio.get('http://localhost:8080/Company');
+    final response = await _dio.get(_baseUrl);
     return (response.data['data'] as List)
         .map((e) => Company.fromJson(e))
         .toList();
   }
 
   Future<Company> createOrUpdateCompany(Company company) async {
-    final response = await _dio.post('http://localhost:8080/Company', data: company.toJson());
+    final response = await _dio.post(_baseUrl, data: company.toJson());
     return Company.fromJson(response.data);
   }
 
   Future<void> deleteCompany(String document) async {
-    await _dio.delete('http://localhost:8080/Company/$document');
+    await _dio.delete('$_baseUrl/$document');
   }
 }

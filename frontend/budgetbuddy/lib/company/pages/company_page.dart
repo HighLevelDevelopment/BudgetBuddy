@@ -6,9 +6,9 @@ Update when go back grom CompanyForm
 */
 
 import 'package:flutter/material.dart';
-import 'package:budgetbuddy/company/pages/company_card.dart';
-import 'package:budgetbuddy/company/pages/company_form.dart';
-import 'package:budgetbuddy/company/pages/company_list.dart';
+import 'package:budgetbuddy/company/pages/widgets/company_card.dart';
+import 'package:budgetbuddy/company/pages/widgets/company_form.dart';
+import 'package:budgetbuddy/company/pages/widgets/company_list.dart';
 
 class CompanyPage extends StatefulWidget {
   const CompanyPage({super.key});
@@ -22,16 +22,19 @@ class _CompanyPageState extends State<CompanyPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Companies'),
+        title: const Text('Companies'),
       ),
-      body: CompanyList(),
+      body: const Padding(
+        padding: EdgeInsets.all(20.0),
+        child: CompanyList(),
+      ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () async {
           final updatedCompany = await Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => CompanyForm(),
+              builder: (context) => const CompanyForm(),
             ),
           );
           if (updatedCompany != null) {
