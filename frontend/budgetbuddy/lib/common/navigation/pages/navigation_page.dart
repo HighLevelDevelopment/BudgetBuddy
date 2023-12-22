@@ -4,6 +4,7 @@ import 'package:budgetbuddy/company/pages/company_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../receipt/pages/receipt_page.dart';
 import '../controllers/navigation_controller.dart';
 
 class NavigationPage extends StatefulWidget {
@@ -33,6 +34,10 @@ class _NavigationPageState extends State<NavigationPage> {
                   label: Text('Company'),
                 ),
                 NavigationRailDestination(
+                  icon: Icon(Icons.receipt),
+                  label: Text('Receipt'),
+                ),
+                NavigationRailDestination(
                   icon: Icon(Icons.info),
                   label: Text('About'),
                 ),
@@ -43,8 +48,10 @@ class _NavigationPageState extends State<NavigationPage> {
             child: Obx(() {
               switch (navigationController.selectedIndex.value) {
                 case 1:
-                  return AboutPage();
-                // Adicione mais casos conforme o número de páginas
+                  return const ReceiptPage();
+                case 2:
+                  return const AboutPage();
+                
                 default:
                   return const CompanyPage();
               }
