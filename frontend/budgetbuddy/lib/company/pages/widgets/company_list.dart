@@ -26,14 +26,25 @@ class _CompanyListState extends State<CompanyList> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    int crossAxisCount = 1;
+    if (screenWidth < 800) {
+      crossAxisCount = 1;
+    } else if (screenWidth < 1000) {
+      crossAxisCount = 2;
+    } else { 
+      crossAxisCount = 4;
+    }
+
     return FutureBuilder<List<Company>>(
       future: companyService.getCompanies(),
       builder: (context, snapshot) {
         if (snapshot.hasData && snapshot.data!.isNotEmpty) {
           final companies = snapshot.data!;
           return GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, // Number of columns
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: crossAxisCount, // Number of columns
               crossAxisSpacing: 10, // Horizontal space between cards
               mainAxisSpacing: 10, // Vertical space between cards
               childAspectRatio: 3 / 1, // Aspect ratio of the cards

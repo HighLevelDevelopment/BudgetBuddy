@@ -19,6 +19,8 @@ class _NavigationPageState extends State<NavigationPage> {
 
   @override
   Widget build(BuildContext context) {
+    navigationController.changeIndex(1);
+
     return Scaffold(
       body: Row(
         children: [
