@@ -11,6 +11,7 @@ import 'package:budgetbuddy/company/pages/widgets/company_card.dart';
 import 'package:flutter/material.dart';
 import 'package:budgetbuddy/company/models/company.dart';
 import 'package:budgetbuddy/company/services/company_service.dart';
+import 'package:get/get.dart';
 
 import 'company_form.dart';
 
@@ -31,10 +32,10 @@ class _CompanyListState extends State<CompanyList> {
     int crossAxisCount = 1;
     if (screenWidth < 800) {
       crossAxisCount = 1;
-    } else if (screenWidth < 1000) {
+    } else if (screenWidth < 1200) {
       crossAxisCount = 2;
     } else { 
-      crossAxisCount = 4;
+      crossAxisCount = 3;
     }
 
     return FutureBuilder<List<Company>>(
@@ -44,27 +45,19 @@ class _CompanyListState extends State<CompanyList> {
           final companies = snapshot.data!;
           return GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: crossAxisCount, // Number of columns
-              crossAxisSpacing: 10, // Horizontal space between cards
-              mainAxisSpacing: 10, // Vertical space between cards
-              childAspectRatio: 3 / 1, // Aspect ratio of the cards
+              crossAxisCount: crossAxisCount,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: 2 / 1
             ),
             itemCount: companies.length,
             itemBuilder: (context, index) {
               final company = companies[index];
-              return CompanyCard(company: company, onEdit: () { 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CompanyForm(company: company),
-                  ),
-                );
-
-                setState(() {});
-               }, onDelete: () {
-                companyService.deleteCompany(company.document);
-                setState(() {});
-               },);
+              return CompanyCard(
+                company: company, 
+                onEdit: () => onEditCompany(context, company), 
+                onDelete: () => onDeleteCompany(company),
+              );
             },
           );
         } else if (snapshot.hasError) {
@@ -78,5 +71,15 @@ class _CompanyListState extends State<CompanyList> {
         }
       },
     );
+  }
+
+  void onDeleteCompany(Company company) {
+    companyService
+      .deleteCompany(company.document)
+      .whenComplete(() => setState(() {}));
+  }
+
+  void onEditCompany(BuildContext context, Company company) {
+    Get.to(() => CompanyForm(company: company))?.whenComplete(() => setState(() {}));
   }
 }

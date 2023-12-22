@@ -20,18 +20,21 @@ class _ReceiptPageState extends State<ReceiptPage> {
       appBar: AppBar(
         title: const Text('Receipt'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Obx(() => DroppedFileWidget(file: receiptDropzoneController.selectedFile.value)),
-          const SizedBox(height: 16),
-          SizedBox(
-            height: 300,
-            child: Center(
-              child: DropzoneWidget(onDroppedFile: receiptDropzoneController.changeFile,),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Obx(() => DroppedFileWidget(file: receiptDropzoneController.selectedFile.value)),
+            const SizedBox(height: 16),
+            SizedBox(
+              height: 300,
+              child: Center(
+                child: DropzoneWidget(onDroppedFile: receiptDropzoneController.changeFile,),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -1,12 +1,4 @@
-/*
-Generate a flutter page with the name "CompanyPage" 
-Put my list CompanyList and a floating button to add a new company using CompanyForm
-And editing any item using CompanyForm
-Update when go back grom CompanyForm
-*/
-
 import 'package:flutter/material.dart';
-import 'package:budgetbuddy/company/pages/widgets/company_card.dart';
 import 'package:budgetbuddy/company/pages/widgets/company_form.dart';
 import 'package:budgetbuddy/company/pages/widgets/company_list.dart';
 
@@ -30,16 +22,13 @@ class _CompanyPageState extends State<CompanyPage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () async {
-          final updatedCompany = await Navigator.push(
+        onPressed: () {
+          Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => const CompanyForm(),
             ),
-          );
-          if (updatedCompany != null) {
-            setState(() {});
-          }
+          ).whenComplete(() => setState(() {}));
         },
       ),
     );
