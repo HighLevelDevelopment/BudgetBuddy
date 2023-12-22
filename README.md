@@ -8,7 +8,7 @@ We'll make our ecossystem with containers.
 
 For using docker to up our API, execute the below code to generate the image.
 ```
-docker build -t budgetbuddyapi -f dockerbuilds/webapi backend/BudgetBuddyAPI/
+docker build -t budgetbuddyapi -f dockerbuilds/webapi backend/BudgetBuddyAPI/ --tag peedroca/budgetbuddyapi:latest
 ```
 
 And start the container with:
