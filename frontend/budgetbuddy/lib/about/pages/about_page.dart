@@ -16,7 +16,7 @@ class AboutPage extends StatelessWidget {
           children: <Widget>[
             Text(
               'Creators:',
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
             Text(

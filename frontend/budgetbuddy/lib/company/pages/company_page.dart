@@ -1,3 +1,4 @@
+import 'package:budgetbuddy/common/my_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:budgetbuddy/company/pages/widgets/company_form.dart';
 import 'package:budgetbuddy/company/pages/widgets/company_list.dart';
@@ -14,14 +15,16 @@ class _CompanyPageState extends State<CompanyPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Companies'),
+        title: const Text(
+          'Company', 
+          style: TextStyle(color: MyTheme.lightColor, fontWeight: FontWeight.bold)
+        ),
+        backgroundColor: MyTheme.highlightColor,
+        elevation: 0,
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(20.0),
-        child: CompanyList(),
-      ),
+      body: const CompanyList(),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
+        backgroundColor: MyTheme.highlightColor,
         onPressed: () {
           Navigator.push(
             context,
@@ -30,7 +33,9 @@ class _CompanyPageState extends State<CompanyPage> {
             ),
           ).whenComplete(() => setState(() {}));
         },
+        child: const Icon(Icons.add, color: MyTheme.lightColor),
       ),
+      
     );
   }
 }

@@ -1,8 +1,3 @@
-/*
-Generate a flutter page with the name "CompanyForm" 
-This widget can create and edit a company
-*/
-
 import 'package:flutter/material.dart';
 import 'package:budgetbuddy/company/models/company.dart';
 import 'package:budgetbuddy/company/services/company_service.dart';
@@ -50,6 +45,7 @@ class _CompanyFormState extends State<CompanyForm> {
                 controller: _nameController,
                 decoration: const InputDecoration(
                   labelText: 'Name',
+                  border: OutlineInputBorder(),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -57,6 +53,7 @@ class _CompanyFormState extends State<CompanyForm> {
                   }
                   return null;
                 },
+                maxLength: 150,
               ),
               TextFormField(
                 controller: _tradingController,

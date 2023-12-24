@@ -1,5 +1,6 @@
 // /<domain_name>/pages/company_card.dart
 
+import 'package:budgetbuddy/common/my_theme.dart';
 import 'package:flutter/material.dart';
 import '../../models/company.dart';
 
@@ -19,6 +20,7 @@ class CompanyCard extends StatelessWidget {
     return Card(
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      color: MyTheme.lightColor,
       child: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Column(
@@ -53,12 +55,12 @@ class CompanyCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.edit),
+                  icon: const Icon(Icons.edit, color: MyTheme.highlightColor,),
                   onPressed: onEdit,
                 ),
                 const SizedBox(width: 8),
                 IconButton(
-                  icon: const Icon(Icons.delete),
+                  icon: const Icon(Icons.delete, color: MyTheme.highlightColor,),
                   onPressed: onDelete,
                 ),
               ],

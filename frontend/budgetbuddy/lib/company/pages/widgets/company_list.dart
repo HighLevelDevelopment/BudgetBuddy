@@ -44,6 +44,8 @@ class _CompanyListState extends State<CompanyList> {
         if (snapshot.hasData && snapshot.data!.isNotEmpty) {
           final companies = snapshot.data!;
           return GridView.builder(
+            padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 150),
+            shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: crossAxisCount,
               crossAxisSpacing: 10,

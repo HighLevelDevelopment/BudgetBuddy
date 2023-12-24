@@ -1,10 +1,10 @@
 import 'package:budgetbuddy/about/pages/about_page.dart';
-import 'package:budgetbuddy/common/navigation/pages/navigation_drawer_page.dart';
-import 'package:budgetbuddy/company/pages/company_page.dart';
+import 'package:budgetbuddy/common/my_theme.dart';
+import 'package:budgetbuddy/receipt/pages/receipt_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../receipt/pages/receipt_page.dart';
+import '../../../company/pages/company_page.dart';
 import '../controllers/navigation_controller.dart';
 
 class NavigationPage extends StatefulWidget {
@@ -26,10 +26,26 @@ class _NavigationPageState extends State<NavigationPage> {
         children: [
           Obx(() => 
             NavigationRail(
-              extended: navigationController.isExtended.value,
+              backgroundColor: MyTheme.highlightColor,
+              unselectedIconTheme: const IconThemeData(color: Colors.white),
+              unselectedLabelTextStyle: const TextStyle(color: Colors.white),
+              selectedIconTheme: const IconThemeData(color: Colors.white),
+              selectedLabelTextStyle: const TextStyle(color: Colors.white),
+              elevation: 4,
+              indicatorColor: MyTheme.darkColor,
+              leading: Padding(
+                padding: const EdgeInsets.only(bottom: 50),
+                child: InkWell(
+                  child: Image.asset(
+                    'assets/images/logo_without_bg.png',
+                    width: 50,
+                    height: 50,
+                  ),
+                ),
+              ),
               selectedIndex: navigationController.selectedIndex.value,
               onDestinationSelected: navigationController.changeIndex,
-              //labelType: NavigationRailLabelType.selected,
+              labelType: NavigationRailLabelType.all,
               destinations: const [
                 NavigationRailDestination(
                   icon: Icon(Icons.work),
@@ -44,27 +60,21 @@ class _NavigationPageState extends State<NavigationPage> {
                   label: Text('About'),
                 ),
               ],
-              trailing: Expanded(
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: IconButton(
-                      icon:
-                        navigationController.isExtended.value ?
-                        const Icon(Icons.keyboard_double_arrow_left) :
-                        const Icon(Icons.keyboard_double_arrow_right),
-                      onPressed: () {
-                        navigationController.changeExtended();
-                      },
-                    ),
-                  ),
-                ),
-              ),
             )
           ),
-          const Expanded(
-            child: NavigationDrawerPage(),
+          Expanded(
+            child: Obx(() {
+              switch (navigationController.selectedIndex.value) {
+                case 0:
+                  return const CompanyPage();
+                case 1:
+                  return const ReceiptPage();
+                case 2:
+                  return const AboutPage();
+                default:
+                  return const CompanyPage();
+              }
+            }),
           )
         ],
       ),
