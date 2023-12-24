@@ -1,5 +1,5 @@
 import 'package:budgetbuddy/about/pages/about_page.dart';
-import 'package:budgetbuddy/company/pages/widgets/company_list.dart';
+import 'package:budgetbuddy/common/navigation/pages/navigation_drawer_page.dart';
 import 'package:budgetbuddy/company/pages/company_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,7 +29,7 @@ class _NavigationPageState extends State<NavigationPage> {
               extended: navigationController.isExtended.value,
               selectedIndex: navigationController.selectedIndex.value,
               onDestinationSelected: navigationController.changeIndex,
-              labelType: NavigationRailLabelType.selected,
+              //labelType: NavigationRailLabelType.selected,
               destinations: const [
                 NavigationRailDestination(
                   icon: Icon(Icons.work),
@@ -44,20 +44,27 @@ class _NavigationPageState extends State<NavigationPage> {
                   label: Text('About'),
                 ),
               ],
+              trailing: Expanded(
+                child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                      icon:
+                        navigationController.isExtended.value ?
+                        const Icon(Icons.keyboard_double_arrow_left) :
+                        const Icon(Icons.keyboard_double_arrow_right),
+                      onPressed: () {
+                        navigationController.changeExtended();
+                      },
+                    ),
+                  ),
+                ),
+              ),
             )
           ),
-          Expanded(
-            child: Obx(() {
-              switch (navigationController.selectedIndex.value) {
-                case 1:
-                  return const ReceiptPage();
-                case 2:
-                  return const AboutPage();
-                
-                default:
-                  return const CompanyPage();
-              }
-            }),
+          const Expanded(
+            child: NavigationDrawerPage(),
           )
         ],
       ),
