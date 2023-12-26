@@ -4,6 +4,8 @@ import 'package:budgetbuddy/receipt/controllers/receipt_dropzone_controller.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../common/my_theme.dart';
+
 class ReceiptPage extends StatefulWidget {
   const ReceiptPage({super.key});
 
@@ -18,7 +20,12 @@ class _ReceiptPageState extends State<ReceiptPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Receipt'),
+        title: const Text(
+          'Receipt', 
+          style: TextStyle(color: MyTheme.lightColor, fontWeight: FontWeight.bold)
+        ),
+        backgroundColor: MyTheme.highlightColor,
+        elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

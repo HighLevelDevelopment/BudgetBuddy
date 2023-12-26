@@ -2,7 +2,7 @@
 
 import 'package:budgetbuddy/common/my_theme.dart';
 import 'package:flutter/material.dart';
-import '../../models/company.dart';
+import '../models/company.dart';
 
 class CompanyCard extends StatelessWidget {
   final Company company;

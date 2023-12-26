@@ -1,5 +1,6 @@
 import 'package:budgetbuddy/common/my_theme.dart';
 import 'package:budgetbuddy/common/navigation/pages/navigation_page.dart';
+import 'package:budgetbuddy/company/widgets/company_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       theme: MyTheme.lightTheme,
       routes: {
-        '/': (context) => const NavigationPage(),
+        '/': (context) => const NavigationPage()
       },
     );
   }

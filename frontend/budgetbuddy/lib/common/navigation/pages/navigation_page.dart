@@ -1,6 +1,7 @@
 import 'package:budgetbuddy/about/pages/about_page.dart';
 import 'package:budgetbuddy/common/my_theme.dart';
 import 'package:budgetbuddy/receipt/pages/receipt_page.dart';
+import 'package:budgetbuddy/spent/pages/spent_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,7 @@ class _NavigationPageState extends State<NavigationPage> {
 
   @override
   Widget build(BuildContext context) {
-    navigationController.changeIndex(0);
+    navigationController.changeIndex(2);
 
     return Scaffold(
       body: Row(
@@ -56,6 +57,10 @@ class _NavigationPageState extends State<NavigationPage> {
                   label: Text('Receipt'),
                 ),
                 NavigationRailDestination(
+                  icon: Icon(Icons.paid),
+                  label: Text('Spent'),
+                ),
+                NavigationRailDestination(
                   icon: Icon(Icons.info),
                   label: Text('About'),
                 ),
@@ -70,6 +75,8 @@ class _NavigationPageState extends State<NavigationPage> {
                 case 1:
                   return const ReceiptPage();
                 case 2:
+                  return const SpentPage();
+                case 3:
                   return const AboutPage();
                 default:
                   return const CompanyPage();

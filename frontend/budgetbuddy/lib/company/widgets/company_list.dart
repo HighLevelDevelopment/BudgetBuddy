@@ -7,7 +7,7 @@ Use my CompanyService
 Use my CompanyCard
 */
 
-import 'package:budgetbuddy/company/pages/widgets/company_card.dart';
+import 'package:budgetbuddy/company/widgets/company_card.dart';
 import 'package:flutter/material.dart';
 import 'package:budgetbuddy/company/models/company.dart';
 import 'package:budgetbuddy/company/services/company_service.dart';

@@ -1,7 +1,7 @@
 import 'package:budgetbuddy/common/my_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:budgetbuddy/company/pages/widgets/company_form.dart';
-import 'package:budgetbuddy/company/pages/widgets/company_list.dart';
+import 'package:budgetbuddy/company/widgets/company_form.dart';
+import 'package:budgetbuddy/company/widgets/company_list.dart';
 
 class CompanyPage extends StatefulWidget {
   const CompanyPage({super.key});
