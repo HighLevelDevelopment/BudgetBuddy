@@ -8,6 +8,7 @@ namespace BudgetBuddyAPI
         {
             app.MapCompany();
             app.MapCategory();
+            app.MapSpent();
         }
 
         public static void ConfigureStatus(this WebApplication app)
