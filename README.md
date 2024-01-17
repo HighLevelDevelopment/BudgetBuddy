@@ -10,3 +10,9 @@ And start the container with:
 ```
 docker run -d -p 8080:80 --name budgetbuddyapi budgetbuddyapi
 ```
+
+docker tag budgetbuddyapi:latest peedroca/budgetbuddyapi:latest
+
+docker push peedroca/budgetbuddyapi:latest
+
+docker run -d -p 8080:80 --name budgetbuddyapi peedroca/budgetbuddyapi:latest
